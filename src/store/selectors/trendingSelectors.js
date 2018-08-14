@@ -12,4 +12,9 @@ export const getTestData_2 = (state = {}) =>
     state.TEST.payload.data_2 !== undefined
       ? state.TEST.payload.data_2
       : state;
-  
+
+export const getMeta = (state = {}) =>
+    state.meta !== undefined 
+        ? state.meta
+        : state;
+    
