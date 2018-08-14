@@ -1,7 +1,16 @@
-import React from "react";
+import React, {Component} from "react";
 
-const TrendingContainer = () => (
-    <div>TrendingContainer</div>
-);
+class TrendingContainer extends Component {
+
+    constructor(props){
+        super(props)
+    }
+
+    render(){
+    return(<div>TrendingContainer</div>)  
+    }
+
+    
+};
 
 export default TrendingContainer;
