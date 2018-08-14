@@ -7,7 +7,7 @@ class TrendingContainer extends Component {
     }
 
     render(){
-    return(<div>TrendingContainer</div>)  
+    return(<div>TrendingContainer (Componente React)</div>)  
     }
 
     
