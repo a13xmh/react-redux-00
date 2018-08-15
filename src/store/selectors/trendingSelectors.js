@@ -14,7 +14,9 @@ export const getTestData_2 = (state = {}) =>
       : state;
 
 export const getMeta = (state = {}) =>
-    state.meta !== undefined 
-        ? state.meta
+    state.ACTION_TRENDING_GET_DATA_RESPONSE !== undefined &&
+    state.ACTION_TRENDING_GET_DATA_RESPONSE.payload !== undefined &&
+    state.ACTION_TRENDING_GET_DATA_RESPONSE.payload.meta !== undefined
+        ? state.ACTION_TRENDING_GET_DATA_RESPONSE.payload.meta
         : state;
     
