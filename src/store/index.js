@@ -1,17 +1,35 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const initialState = {};
+const middleware = [];
+
+//applyMiddleware is an example of the most powerful Redux extension mechanism called store enhancers.
+const enhancers = [applyMiddleware(...middleware)];
 
 /*
 createStore
 Creates a Redux store that holds the complete state tree of your app.
 There should only be a single store in your app.
+https://redux.js.org/api/createstore
 */
 const store = createStore(
   rootReducer,
-  initialState
+  initialState,
+  composeWithDevTools(compose(...enhancers))
 );
+
+/*
+Why composeWithDevTools https://medium.com/@zalmoxis/improve-your-development-workflow-with-redux-devtools-extension-f0379227ff83
+*/
+
+
+/*
+Middleware acts as a pipeline that all dispatched actions go through before reaching the store. 
+Each middleware can inspect actions, transform actions, pass them on, or even stop them from reaching the store. 
+*/
+
 
 /*
 Arguments
